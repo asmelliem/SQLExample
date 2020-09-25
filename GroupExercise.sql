@@ -41,7 +41,7 @@ SELECT *
 FROM [Northwind].[dbo].[Products]
 WHERE [ProductID] = 79;
 
- INSERT INTO [Northwind].[dbo].[Products] (ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued)
+INSERT INTO [Northwind].[dbo].[Products] (ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued)
   VALUES ('Dumpling', 1, 1, '1 boxes x 2 bags', 4.0000, 20, 0, 10, 0); 
 
 --Add a new record to the Order Details Table that references a new record in the Orders table 
@@ -75,9 +75,9 @@ WHERE [EmployeeID] = 1;
 --Update the employee record for Andrew Fuller to state that he reports to Nancy Davolio the new President of Sales
 UPDATE [Northwind].[dbo].[Employees]
 SET [ReportsTo] = 1
-WHERE [LastName] = 'Fuller' AND [FirstName] = 'Andrew';
+WHERE [EmployeeID] = 2;
 
 --Update the Employee record for Anne Dodsworth. Change Anne's title to Vice President, Sales and set that she reports to Nancy Davolio
 UPDATE [Northwind].[dbo].[Employees]
 SET [ReportsTo] = 1, [Title] = 'Vice President, Sales'
-WHERE [LastName] = 'Dodsworth' AND [FirstName] = 'Anne';
+WHERE [EmployeeID] = 9;
