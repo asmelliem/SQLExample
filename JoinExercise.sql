@@ -7,20 +7,20 @@ SELECT *  FROM [Northwind].[dbo].[Customers]
 
 --1. Query orders that were placed for the product 'Queso Cabrales'
 SELECT * FROM [Northwind].[dbo].[Order Details] orderDetail
-LEFT JOIN [Northwind].[dbo].[Products] products
+JOIN [Northwind].[dbo].[Products] products
 on products.ProductID = orderDetail.ProductID 
 WHERE products.ProductName = 'Queso Cabrales';
 
 --2. Query orders that were placed for the product 'Manjimup Dried Apples' with a discount of 15%. Return the quantity ordered
 SELECT * FROM [Northwind].[dbo].[Order Details] orderDetail
-LEFT JOIN [Northwind].[dbo].[Products] products
+JOIN [Northwind].[dbo].[Products] products
 on products.ProductID = orderDetail.ProductID 
 WHERE products.ProductName = 'Manjimup Dried Apples' AND orderDetail.Discount = 0.15;
 
 --	3. Query orders that were placed  with an ordered amount of 20 or greater. Return the product name and any discount
 SELECT products.ProductName, orderDetail.Discount 
 FROM [Northwind].[dbo].[Order Details] orderDetail
-LEFT JOIN [Northwind].[dbo].[Products] products
+JOIN [Northwind].[dbo].[Products] products
 on products.ProductID = orderDetail.ProductID 
 WHERE orderDetail.Quantity >= 20;
 
